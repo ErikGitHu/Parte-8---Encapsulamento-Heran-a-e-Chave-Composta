@@ -5,10 +5,12 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.com.mycompany.loja.dao.CategoriaDao;
 import br.com.mycompany.loja.dao.ClienteDao;
 import br.com.mycompany.loja.dao.PedidoDao;
 import br.com.mycompany.loja.dao.ProdutoDao;
 import br.com.mycompany.loja.model.Categoria;
+import br.com.mycompany.loja.model.CategoriaId;
 import br.com.mycompany.loja.model.Cliente;
 import br.com.mycompany.loja.model.ItemPedido;
 import br.com.mycompany.loja.model.Pedido;
@@ -29,11 +31,16 @@ public class Usuario {
 		
 		licao_pratica_6();
 		
+		licao_pratica_7();
+		
+	}
+
+	private static void licao_pratica_7() {
 		EntityManager em = JPAUtil.getEntityManager();
 		ProdutoDao produtoDao = new ProdutoDao(em);
+		CategoriaDao categoriaDao = new CategoriaDao(em);
 		
 		List<Produto> produto = produtoDao.consultarPorParametros("Notebook", null, null, null);
-		
 	}
 
 	private static void licao_pratica_6() {

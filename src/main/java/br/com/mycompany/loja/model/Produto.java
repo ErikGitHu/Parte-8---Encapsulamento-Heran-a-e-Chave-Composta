@@ -8,10 +8,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name = "produtos")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Produto {
 	
 	@Id
@@ -35,7 +38,7 @@ public class Produto {
 		this.categoria = categoria;
 	}
 
-	public Produto(String string, String string2, BigDecimal bigDecimal, Categoria categoria) {
+	public Produto(String string, String string2, BigDecimal bigDecimal, Categoria categoria2) {
 		// TODO Auto-generated constructor stub
 	}
 
